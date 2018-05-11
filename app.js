@@ -1,9 +1,9 @@
 var express = require('express');
-var exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
+
 var path = require('path');
 
-
+var SPController = require('./Controllers/SPController');
 var app = express();
 
 var handlebars = require('express-handlebars').create({
@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('qly-sanpham');
 });
+app.use('/SP', SPController);
 app.listen(3000);
