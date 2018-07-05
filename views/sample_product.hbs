@@ -1,271 +1,186 @@
-<div class="body-outer container clearfix category-hide single-outer">
+<div class="body-outer fluid fluid-nomargin container clearfix">
     <div class="primary-outer">
         <div class="single-header fluid fluid-nomargin clearfix">
-
             <div class="grid8">
-                <ul class="breadcrumb no-style" xmlns:v="http://rdf.data-vocabulary.org/#">
+                <ul class="breadcrumb no-style" xmlns:v="">
                     <li typeof="v:Breadcrumb">
-                        <a rel="v:url" property="v:title" href="index.html">Trang chủ</a>
-                        <span class="divider">/</span>
+                        <a rel="v:url" property="v:title" href="/">Trang chủ</a>
+                        
                     </li>
                     <li typeof="v:Breadcrumb">
-                        <a rel="v:url" property="v:title" href="ngoai-ngu.html">Sách quốc văn</a>
-                        <span class="divider">/</span>
+                        <a rel="v:url" property="v:title" href="/tim-kiem/theo-loai/?id={{tl.idLoai}}">{{tl.tenLoai}}</a>
+                       
                     </li>
-                    <li typeof="v:Breadcrumb">
-                        <a rel="v:url" property="v:title" href="ngoai-ngu.html">Văn học</a>
-                        <span class="divider">/</span>
-                    </li>
-                    <li typeof="v:Breadcrumb">
-                        <a rel="v:url" property="v:title" href="ngoai-ngu.html">Truyện ngắn - Tản văn</a>
-                        <span class="divider">/</span>
-                    </li>
-                    <li typeof="v:Breadcrumb" class="active">
-                        <em property="v:title">Bên Kia Đồi</em>
+                     {{#each products}}
+                      <li typeof="v:Breadcrumb">
+                        <a rel="v:url" property="v:title" href="#">{{ten_sach}}</a>
+                        
                     </li>
                 </ul>
             </div>
         </div>
-
-        <div class="row" itemscope="" itemtype="http://schema.org/Product">
+       
+        <div class="row" itemscope="" itemtype="">
             <div class="col-md-5">
                 <div class="image-box js-image-box no-left">
 
                     <div class="magiczoom">
 
                         <a href="#" class="book-review-btn">
-                            <img src="http://tala.tikicdn.com/assets/img/book-review-btn.png" height="21" width="100" alt="">
+                            <img style="margin-left: 200px" src="http://tala.tikicdn.com/assets/img/book-review-btn.png" height="21" width="100" alt="">
                         </a>
                         <a id="product-magiczoom" class="js-book-review-show" href="#">
-                            <img itemprop="image" src="http://tala.tikicdn.com/cache/w232/media/catalog/product/n/g/nguoi-la-ma-thanh-rome.jpg">
+                            <img style="    width: 250px;margin-left: 60px" itemprop="image" src="/{{hinhAnh}}">
                         </a>
                     </div>
                 </div>
-                <div class="social-wrapper" style="/* text-align: left; */ margin-left: 60px">
+                <div class="social-wrapper" style="/* text-align: left; */ margin-left: 110px">
                     <div class="fb-like fb_iframe_widget" style="margin-bottom:10px; top: -5px;" data-href="#" data-width="300" data-layout="button_count"
-                         data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=220558114759707&amp;container_width=413&amp;href=http%3A%2F%2Ftiki.vn%2Fdu-hanh-nguoc-thoi-gian-nguoi-la-ma-o-thanh-rome-p90325.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;width=300">
-                            <span style="vertical-align: bottom; width: 139px; height: 20px;">
-                                <iframe name="f1491c4204" width="300px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no"
-                                        title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.3/plugins/like.php?action=like&amp;app_id=220558114759707&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F44OwK74u0Ie.js%3Fversion%3D41%23cb%3Df126ab9a18%26domain%3Dtiki.vn%26origin%3Dhttp%253A%252F%252Ftiki.vn%252Ff262bef4b%26relation%3Dparent.parent&amp;container_width=413&amp;href=http%3A%2F%2Ftiki.vn%2Fdu-hanh-nguoc-thoi-gian-nguoi-la-ma-o-thanh-rome-p90325.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;width=300"
-                                        style="border: none; visibility: visible; width: 139px; height: 20px;" class=""></iframe>
-                            </span>
+                        data-action="like" data-show-faces="false" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=220558114759707&amp;container_width=413&amp;href=http%3A%2F%2Ftiki.vn%2Fdu-hanh-nguoc-thoi-gian-nguoi-la-ma-o-thanh-rome-p90325.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;width=300">
+                        <span style="vertical-align: bottom; width: 139px; height: 20px;">
+                            <iframe name="f1491c4204" width="300px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no"
+                                title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.3/plugins/like.php?action=like&amp;app_id=220558114759707&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2F44OwK74u0Ie.js%3Fversion%3D41%23cb%3Df126ab9a18%26domain%3Dtiki.vn%26origin%3Dhttp%253A%252F%252Ftiki.vn%252Ff262bef4b%26relation%3Dparent.parent&amp;container_width=413&amp;href=http%3A%2F%2Ftiki.vn%2Fdu-hanh-nguoc-thoi-gian-nguoi-la-ma-o-thanh-rome-p90325.html&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=true&amp;show_faces=false&amp;width=300"
+                                style="border: none; visibility: visible; width: 139px; height: 20px;" class=""></iframe>
+                        </span>
                     </div>
                 </div>
             </div>
+            <div class="col-md-5"style="margin-left: -80px;width: 65%">
 
-
-            <div class="col-md-7">
                 <div class="item-box">
-                    <h1 class="item-name" itemprop="name">
-                        Du Hành Ngược Thời Gian - Người La Mã Ở Thành Rome </h1>
-
-
-
+                    <h1 class="item-name" itemprop="name" style="font-size: 30px;margin-bottom: 20px">
+                        {{ten_sach}} </h1>
 
                     <div class="item-row1">
+
                         <div class="item-price">
+                            <div class="item-promotion">
+                                <div class="item-promotion-title"style="color: #00aaf1">
+                                    <h2>Thông tin sách</h2>
 
-                            <div class="item-brand">
-                                <h6>Tác giả</h6>
-                                <p>
-                                    <a target="_blank" href="/author/nhieu-tac-gia.html">Nhiều Tác Giả</a>
-                                </p>
-                                <br>
-                                <span>
-                                        <em>Bìa Mềm</em>
-                                    </span>
+                                </div>
                             </div>
-
-
-
+                            <div class="item-brand">
+                                <span>
+                                    <em>Tác giả: </em>
+                                    <a href="#">{{tac_gia}}</a>
+                                </span>
+                            </div>
+                            <div class="item-brand">
+                                <span>
+                                    <em>Nhà xuất bản: </em>
+                                    <a href="/tim-kiem/theo-NhaSX?id={{idNhaSX}}">{{tenNhaSX}}</a>
+                                </span>
+                            </div>
                             <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
                                 <meta itemprop="priceCurrency" content="VND">
                                 <meta itemprop="price" content="26000">
                             </div>
+                            <p class="item-brand" data-value="35000" id="p-listpirce">
+                                <span>Lượt Xem: <b>{{luotXem}}</b> - Lượt Mua: <b>{{luotMua}}</b></span>
 
-                            <p class="old-price-item" data-value="35000" id="p-listpirce">
-                                <span>Giá bìa:</span>
-                                <span>35.000&nbsp;₫</span>
                             </p>
-                            <p class="special-price-item" data-value="26000" id="p-specialprice">
-                                <span>Tại Tiki:</span>
-                                <span id="span-price">26.000&nbsp;₫</span>
+                            <p class="item-brand" data-value="26000" id="p-specialprice">
+                                <span>Giá:</span>
+                                <span id="span-price"style="color: red;font-size: 18px"><b>{{number_format giaBan}}&nbsp;₫</b></span>
                                 <span>(Đã có VAT)</span>
                             </p>
-                            <p class="saleoff-price-item">
+                            <p class="item-brand">
                                 <span>Tiết kiệm:</span>
-                                <span>9.000&nbsp;₫ (26%)</span>
+                                <span style="color: red;font-size: 16px"><b>10%</b></span><span> ({{divide giaBan 10}} ₫)</span>
                             </p>
                             <p class="partnership-price-item">
-                                    <span class="js-product-gift-icon" data-toggle="tooltip" data-title="Thanh toán với thẻ Visa để được giảm thêm 10%, tối đa 200.000đ/đơn hàng. Áp dụng với 100 đơn hàng đầu tiên mỗi ngày. Chương trình kéo dài đến hết 30/09/2015."
-                                          data-placement="bottom" data-original-title="" title="">
-                                        <img src="http://tala.tikicdn.com/assets/media/visa-price-label.png">
-                                    </span>
-                                <span>23.400&nbsp;₫</span>
+                                <span class="js-product-gift-icon" data-toggle="tooltip" data-title="Thanh toán với thẻ Visa để được giảm thêm 10%, tối đa 200.000đ/đơn hàng. Áp dụng với 100 đơn hàng đầu tiên mỗi ngày. Chương trình kéo dài đến hết 30/09/2015."
+                                    data-placement="bottom" data-original-title="" title="">
+                                    <img src="http://tala.tikicdn.com/assets/media/visa-price-label.png">
+                                </span>
+                                <span>Giảm 12.5% ({{divide giaBan 8}}&nbsp;₫)</span>
                             </p>
-                            <p class="cachep-stock-left">
-                                <span>Chỉ còn 2 sản phẩm</span>
+                            <p class="item-brand">
+                                <span>Còn <b>{{soLuong}}</b> sản phẩm</span>
                             </p>
 
                         </div>
                         <div class="item-other">
-                            <p class="item-review-now">
-                                <a id="write_review" href="#goto_write_review">Viết nhận xét để nhận Tiki Xu</a>
-                            </p>
-                            <div class="item-benefit">
-                                <p>
-                                        <span class="js-product-gift-icon" data-toggle="tooltip" data-title="Miễn phí đổi trả nếu sản phẩm hư hỏng trong 7 ngày đầu tiên (do Nhà Cung Cấp). Thông tin đầy đủ về đổi-trả-bảo hành, mời quý khách xem chi tiết."
-                                              data-placement="bottom" data-original-title="" title="">Miễn phí đổi trả trong vòng 7 ngày</span>
-                                    <a href="/doi-tra-de-dang" target="_blank" class="has-icon">Chi tiết</a>
-                                </p>
-                                <p>
-                                    Xem thêm
-                                    <a href="/author/nhieu-tac-gia.html">sách truyện của Nhiều Tác Giả</a> tại Tiki.vn
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-promotion">
-
-                        <div class="item-promotion-title">
-                            <h2>Thông tin &amp; Khuyến mãi</h2>
-                        </div>
-
-                        <div class="item-promotion-content">
 
 
-
-
-                            <ul class="no-left">
-
-                                <li>
-                                    <p>Với mỗi
-                                        <span style="color: #ff0000;">
-                                                <strong>100.000đ</strong>
-                                            </span> trong đơn hàng, quý khách được tặng
-                                        <span style="color: #ff0000;">
-                                                <strong>300</strong>
-                                            </span> Tiki Xu.</p>
-                                    <a href="#freegift-popup-84" class="has-icon js-open-freegift">Chi tiết</a>
-                                </li>
-                                <li>Đăng ký
-                                    <a target="blank" href="http://tiki.vn/bookcare">dịch vụ BookCare</a> để được bọc plastic đến 99% sách tại Tiki.vn</li>
-                                <li>Nhận hàng tại
-                                    <select id="select-prov" name="select-prov"="form-control input-sm">
-                                    <option value="2 - 3 ngày">Hồ Chí Minh</option>
-                                    <option value="4 - 5 ngày">Hà Nội</option>
-                                    <option value="4 - 6 ngày">An Giang</option>
-                                    <option value="4 - 6 ngày">Bạc Liêu</option>
-                                    <option value="3 - 4 ngày">Bà Rịa Vũng Tàu</option>
-                                    <option value="6 - 8 ngày">Bắc Kạn</option>
-                                    <option value="6 - 8 ngày">Bắc Giang</option>
-                                    <option value="5 - 7 ngày">Bắc Ninh</option>
-                                    <option value="4 - 7 ngày">Bến Tre</option>
-                                    <option value="3 - 5 ngày">Bình Dương</option>
-                                    <option value="4 - 6 ngày">Bình Phước</option>
-                                    <option value="4 - 6 ngày">Bình Thuận</option>
-                                    <option value="7 - 9 ngày">Cao Bằng</option>
-                                    <option value="4 - 6 ngày">Cà Mau</option>
-                                    <option value="3 - 4 ngày">Cần Thơ</option>
-                                    <option value="3 - 5 ngày">Ðà Nẵng</option>
-                                    <option value="5 - 7 ngày">Ðắc Lắk</option>
-                                    <option value="6 - 9 ngày">Gia Lai</option>
-                                    <option value="6 - 8 ngày">Hà Giang</option>
-                                    <option value="5 - 7 ngày">Hà Nam</option>
-                                    <option value="7 - 9 ngày">Hà Tĩnh</option>
-                                    <option value="6 - 8 ngày">Hải Dương</option>
-                                    <option value="5 - 6 ngày">Hải Phòng</option>
-                                    <option value="7 - 10 ngày">Hoà Bình</option>
-                                    <option value="6 - 8 ngày">Huế</option>
-                                    <option value="8 - 10 ngày">Lai Châu</option>
-                                    <option value="7 - 9 ngày">Lạng Sơn</option>
-                                    <option value="4 - 7 ngày">Lâm Ðồng</option>
-                                    <option value="6 - 8 ngày">Ninh Bình</option>
-                                    <option value="5 - 8 ngày">Phú Yên</option>
-                                    <option value="6 - 8 ngày">Quảng Bình</option>
-                                    <option value="5 - 7 ngày">Quảng Nam</option>
-                                    <option value="5 - 8 ngày">Quảng Ngãi</option>
-                                    <option value="6 - 8 ngày">Quảng Trị</option>
-                                    <option value="5 - 7 ngày">Sóc Trăng</option>
-                                    <option value="4 - 6 ngày">Trà Vinh</option>
-                                    <option value="7 - 9 ngày">Tuyên Quang</option>
-                                    <option value="5 - 7 ngày">Bình Định</option>
-                                    <option value="4 - 5 ngày">Ðồng Nai</option>
-                                    <option value="4 - 6 ngày">Ðồng Tháp</option>
-                                    <option value="4 - 6 ngày">Hậu Giang</option>
-                                    <option value="5 - 7 ngày">Hưng Yên</option>
-                                    <option value="4 - 6 ngày">Khánh Hoà</option>
-                                    <option value="5 - 7 ngày">Kiên Giang</option>
-                                    <option value="6 - 9 ngày">Kon Tum</option>
-                                    <option value="7 - 10 ngày">Lào Cai</option>
-                                    <option value="4 - 7 ngày">Long An</option>
-                                    <option value="6 - 9 ngày">Nam Ðịnh</option>
-                                    <option value="7 - 9 ngày">Nghệ An</option>
-                                    <option value="4 - 6 ngày">Ninh Thuận</option>
-                                    <option value="6 - 8 ngày">Phú Thọ</option>
-                                    <option value="6 - 8 ngày">Quảng Ninh</option>
-                                    <option value="7 - 9 ngày">Sơn La</option>
-                                    <option value="4 - 6 ngày">Tây Ninh</option>
-                                    <option value="6 - 8 ngày">Thái Bình</option>
-                                    <option value="6 - 8 ngày">Thái Nguyên</option>
-                                    <option value="7 - 10 ngày">Thanh Hóa</option>
-                                    <option value="4 - 6 ngày">Tiền Giang</option>
-                                    <option value="4 - 7 ngày">Vĩnh Long</option>
-                                    <option value="6 - 8 ngày">Vĩnh Phúc</option>
-                                    <option value="6 - 8 ngày">Yên Bái</option>
-                                    <option value="5 - 7 ngày">Ðắk Nông</option>
-                                    <option value="7 - 9 ngày">Điện Biên</option>
-                                    </select>
-                                    từ
-                                    <span id="delivery_time" style="color: black">2 - 3 ngày</span> , không kể Thứ 7 &amp; CN.</li>
-                            </ul>
-                        </div>
-
-
-
-
-                    </div>
-                    <form role="form" id="add-to-cart" action="/checkout/ajaxAdd">
-                        <input type="hidden" name="product_type" value="simple">
-                        <div class="item-product-options">
-                            <div class="quantity-box">
-
-                                <p class="quantity-label">Số lượng:</p>
-                                <div class="quantity-col1">
-                                    <p class="tiki-number-input">
-                                    <div class="input-group bootstrap-touchspin">
-                                        <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
-                                        <input id="qty" type="number" name="qty" value="1" min="1" max="100" class="form-control" style="display: block; color: red;">
-                                        <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
-                                    </div>
-                                    </p>
+                            <div class="item-promotion">
+                                <div class="item-promotion-title"style="color: orangered">
+                                    <h2 >Dịch vụ &amp; Khuyến mãi</h2>
                                 </div>
-                                <input id="product_id_for_wishlist" name="id" type="hidden" value="90325">
+                                <div class="item-promotion-content">
+                                    <ul class="no-left">
+                                        <li>
+                                            Với mỗi
+                                                <span style="color: #000;">
+                                            <strong>100.000đ</strong>
+                                        </span> đơn hàng, quý khách được tặng
+                                                <span style="color: #000;">
+                                            <strong>300</strong>
+                                        </span> Xu
+                                        </li>
+                                        <li>Miễn phí đổi trả trong vòng 7 ngày</li>
+                                        <li>Nhận hàng từ
+                                            <span id="delivery_time" style="color: black">2 - 3 ngày</span> , không kể Thứ 7 &amp; CN.</li>
+                                        <li>Đăng ký
+                                            <a target="blank" href=""style="color: #000"><strong>dịch vụ BookCare</strong></a> để được bọc plastic đến 99% sách</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--<form role="form" id="add-to-cart" action="/checkout/ajaxAdd">-->
+                    <input type="hidden" name="product_type" value="simple">
+                    <div class="item-product-options">
+                        <div class="quantity-box">
+
+
+                            <form class="form-horizontal" id="frmAddItem" method="post" action="/cart/add">
+                                <!--&lt;!&ndash;&ndash;&gt;        <input type="hidden" id="txtP" name="proId" />-->
+                                <input id="idSach" name="idSach" type="hidden" value="{{idSach}}">
+
+
                                 <div class="quantity-col2">
-                                    <button class="add-to-cart js-add-to-cart is-css" type="button" data-original-title="">
-                                            <span class="icon">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </span>
+                                    <p class="quantity-label"style="margin-left: -30px">Số lượng:</p>
+                                    <div class="quantity-col1">
+                                        <p class="tiki-number-input">
+                                            <div class="input-group bootstrap-touchspin">
+                                                <span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span>
+                                                <input id="sl" type="number" name="sl" value="1" min="1" max="100" class="form-control" style="display: block; color: red;">
+                                                <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                                            </div>
+                                        </p>
+                                    </div>
+                                    <input type="text" class="hidden" name="url" value="/sample_product/?id={{idSach}}">
+                                    <button class="add-to-cart js-add-to-cart is-css" type="submit" data-original-title="">
                                         <span class="text">
-                                                Thêm Vào Giỏ Hàng
-                                            </span>
+                                            Thêm Vào Giỏ Hàng
+                                        </span>
                                     </button>
-                                    <button class="add-to-wishlist " type="button"></button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
 
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!--</form>-->
                 </div>
+
             </div>
         </div>
+        <h1 style="color: #0d80e8;font-size: 22px;font-weight: bold;margin-bottom: 22px;margin-left: 20px;margin-top:20px">Mô tả sách</h1>
+        <p style="font-size: 15px;margin-bottom: 22px;margin-left: 25px"> {{moTa}}</p>
+        {{/each}}
+
 
 
         <div class="content-block-inner home-block category-content-slider">
             <div class="block-inner-bar block-inner-tab-outer clearfix">
                 <ul class="block-inner-tab float-left home-aj-tab">
                     <li class="current">
-                        <a rel="nofollow" href="javascript:void(0);" data-container="#home_slider_book_new_outer,#home_slider_book_new_control">Có thể bạn quan tâm</a>
+                        <a rel="nofollow" href="javascript:void(0);" data-container="#home_slider_book_new_outer,#home_slider_book_new_control" style="color: #0d80e8;font-size: 22px;margin-top:20px"><b>Sách cùng thể loại</b></a>
                     </li>
                 </ul>
                 <div id="home_slider_book_new_control" class="block-slider-control float-right mr5" style="display: block;">
@@ -279,197 +194,78 @@
                 <div class="bar-more-button float-right">
                 </div>
             </div>
-            <div id="home_slider_book_new_outer" class="block-inner-content clearfix" style="width: 945px; margin: auto; display: block;">
+            <div id="home_slider_book_new_outer" class="block-inner-content clearfix" style=" margin: auto; display: block;;margin-left: -5px">
                 <div id="owl-demo" class="owl-cachep-book-lib ">
+                    {{#each loai}}
+                        <div class="item" style="width: 150px">
+                            <li class="item-outer">
+                                <a class="item-thumb" href="./?id={{idSach}}" rel="nofollow">
+                                    <img width="200" height="280" src="/{{hinhAnh}}" class="attachment-thumbnail-rectangle wp-post-image" alt="nhumuadongroixuong">
 
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/nhumuadongroixuong-200x280.jpg" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="nhumuadongroixuong">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Như Mùa Đông Rơi Xuống</a>
-                                </h3>
-                                <em class="item-author">Fuyu</em>
-                                <p class="item-price">
-                                    <strong>71.000
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>79.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/lac_loi_giua_co_don_1-200x280.jpg" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="lac_loi_giua_co_don_1">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Lạc Lối Giữa Cô Đơn</a>
-                                </h3>
-                                <em class="item-author">Minh Nhật</em>
-                                <p class="item-price">
-                                    <strong>68.000
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>76.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/Truoc_khi_chet_phai_biet_yeu_la_gi-200x280.jpg" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="Truoc_khi_chet_phai_biet_yeu_la_gi">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Trước Khi Chết Phải Biết Tình Yêu Là Gì</a>
-                                </h3>
-                                <em class="item-author">Nguyễn À Nguyễn</em>
-                                <p class="item-price">
-                                    <strong>85.500
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>95.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/yeunguoingongnui-200x280.jpg" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="yeunguoingongnui">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Yêu Người Ngóng Núi (Tản Văn – Tái Bản 2014)</a>
-                                </h3>
-                                <em class="item-author">Nguyễn Ngọc Tư</em>
-                                <p class="item-price">
-                                    <strong>40.500
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>45.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/airoicungkhac-200x280.gif" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="airoicungkhac">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Ai Rồi Cũng Khác</a>
-                                </h3>
-                                <em class="item-author">Hamlet Trương - Iris Cao</em>
-                                <p class="item-price">
-                                    <strong>62.000
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>69.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/gao-nuoc-mam-rau-muong-200x280.jpg" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="gao-nuoc-mam-rau-muong">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Gạo, Nước Mắm, Rau Muống… Câu Chuyện Ẩm Thực Việt</a>
-                                </h3>
-                                <em class="item-author">Hoàng Trọng Dũng</em>
-                                <p class="item-price">
-                                    <strong>90.000
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>100.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/du-con-song-the-nao-me-cung-luon-ung-ho-200x280.jpg" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="du-con-song-the-nao-me-cung-luon-ung-ho">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Dù Con Sống Thế Nào, Mẹ Cũng Luôn Ủng Hộ</a>
-                                </h3>
-                                <em class="item-author">Gong Ji Young</em>
-                                <p class="item-price">
-                                    <strong>61.000
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>68.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
-                    <div class="item">
-                        <li class="item-outer">
-                            <a class="item-thumb" href="#" rel="nofollow">
-                                <img width="200" height="280" src="img/book/thucdaytrenmainha-200x280.gif" class="attachment-thumbnail-rectangle wp-post-image"
-                                     alt="thucdaytrenmainha">
-                                <span class="item-percent-bubble">-10%</span>
-                            </a>
-                            <div class="item-meta-outer">
-                                <h3 class="item-title">
-                                    <a href="#">Thức Dậy Trên Mái Nhà</a>
-                                </h3>
-                                <em class="item-author">Minh Mẫn</em>
-                                <p class="item-price">
-                                    <strong>58.500
-                                        <u>đ</u>
-                                    </strong>
-                                    <small>65.000
-                                        <u>đ</u>
-                                    </small>
-                                </p>
-                            </div>
-                        </li>
-                    </div>
+                                </a>
+                                <div class="item-meta-outer;"style="margin-left: -5px;width: 115%" >
+                                    <h3 class="item-title"style="font-size: 13px;">
+                                        <a href="./?id={{idSach}}">{{ten_sach}}</a>
+                                    </h3>
+                                    <em class="item-author"style="font-size: 12px;">{{tac_gia}}</em>
+                                    <p class="item-price">
+                                        <b>{{number_format giaBan}}
+                                            <u>đ</u>
+                                        </b>
 
+                                    </p>
+                                </div>
+                            </li>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block-inner home-block category-content-slider">
+            <div class="block-inner-bar block-inner-tab-outer clearfix">
+                <ul class="block-inner-tab float-left home-aj-tab">
+                    <li class="current">
+                        <a rel="nofollow" href="javascript:void(0);" data-container="#home_slider_book_new_outer,#home_slider_book_new_control" style="color: #0d80e8;font-size: 22px;margin-top:20px"><b>Sách cùng nhà xuất bản</b></a>
+                    </li>
+                </ul>
+                <div id="home_slider_book_new_control" class="block-slider-control float-right mr5" style="display: block;">
+                    <a id="home_slider_book_new_control_prev" rel="nofollow" href="javascript:void(0);" class="cachep-book-lib-next prev" style="display: inline;">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a id="home_slider_book_new_control_next" rel="nofollow" href="javascript:void(0);" class="cachep-book-lib-next next" style="display: inline;">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="bar-more-button float-right">
+                </div>
+            </div>
+            <div id="home_slider_book_new_outer" class="block-inner-content clearfix" style="margin: auto; display: block;">
+                <div id="owl-demo" class="owl-cachep-book-lib ">
+                    {{#each nxb}}
+                        <div class="item" style="width: 150px">
+                            <li class="item-outer">
+                                <a class="item-thumb" href="./?id={{idSach}}" rel="nofollow">
+                                    <img width="200" height="280" src="/{{hinhAnh}}" class="attachment-thumbnail-rectangle wp-post-image" alt="nhumuadongroixuong">
+
+                                </a>
+                                <div class="item-meta-outer;"style="margin-left: -5px;width: 115%" >
+                                    <h3 class="item-title"style="font-size: 13px;">
+                                        <a href="./?id={{idSach}}">{{ten_sach}}</a>
+                                    </h3>
+                                    <em class="item-author"style="font-size: 12px;">{{tac_gia}}</em>
+                                    <p class="item-price">
+                                        <b>{{number_format giaBan}}
+                                            <u>đ</u>
+                                        </b>
+
+                                    </p>
+                                </div>
+                            </li>
+                        </div>
+                    {{/each}}
                 </div>
             </div>
         </div>
     </div>
-
 </div>

@@ -1,71 +1,122 @@
 <div class="container sp">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Quản lý sản phẩm</h3>
-        </div>
-        <div class="panel-body">
-
-            <div class="table-responsive">
-                <table class="table">
+    <a class="btn btn-info" href="/sp/add" role="button" style="margin-left: 900px">
+        Thêm sản phẩm mới
+    </a>
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-12">
+                <table id="example1" class="table table-striped">
                     <thead>
-                    <tr>
-                        <th>Mã sách</th>
-                        <th>Tên sách</th>
-                        <th>Tác giả</th>
-                        <th>Nhà xuất bản</th>
-                        <th>Thể loại</th>
-                        <th>Giá bán</th>
-                        <th>Số lượng</th>
-                    </tr>
+                        <tr>
+                            <th>Mã sách</th>
+                            <th>Tên sách</th>
+                            <th>Tác giả</th>
+                            <th>Nhà xuất bản</th>
+                            <th>Tên loại</th>
+                            <th>Giá bán</th>
+                            <th>Số lượng</th>
+                            <th>Sữa</th>
+                            <th>Xóa</th>
+
+                        </tr>
                     </thead>
                     <tbody>
-                    {{#each Book}}
+                        {{#each Book}}
 
-                    <tr>
-                        <td>{{idSach}} </td>
-                        <td>{{ten_sach}} </td>
-                        <td>{{tac_gia}}</td>
-                        <td>{{tenNhaSX}}</td>
-                        <td>{{tenLoai}}</td>
-                        <td>{{giaBan}} </td>
-                        <td>{{soLuongSP}} </td>
-                    </tr>
-                    {{/each}}
+                        <tr>
+                            <td>{{idSach}} </td>
+                            <td>{{ten_sach}} </td>
+                            <td>{{tac_gia}}</td>
+                            <td>{{tenNhaSX}}</td>
+                            <td>{{tenLoai}}</td>
+                            <td>{{number_format giaBan}} đ </td>
+                            <td>{{soLuongSP}}</td>
+                            <td>
+                                <a class="btn" href="/SP/edit?id={{idSach}}" role="button" style="background-color: gold">
+                                    Sửa
+                                </a>
+                            </td>
+                            <td>
+                                <a class="btn" href="/SP/delete?id={{idSach}}" role="button" style="background-color: salmon">
+                                    Xóa
+                                </a>
+                            </td>
+                        </tr>
+
+                        {{/each}}
                     </tbody>
+                   
                 </table>
             </div>
-            <nav class="pagination">
-                <ul class="pagination">
-                    <li>
-                        <a aria-label="Previous">
-                            <span aria-hidden="true">«</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>1</a>
-                    </li>
-                    <li>
-                        <a>2</a>
-                    </li>
-                    <li>
-                        <a>3</a>
-                    </li>
-                    <li>
-                        <a>4</a>
-                    </li>
-                    <li>
-                        <a>5</a>
-                    </li>
-                    <li>
-                        <a aria-label="Next">
-                            <span aria-hidden="true">»</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        </div>
+
+    </div>
+    <!--<button class="btn btn-info" href="/SP/add"type="button">Thêm </button>-->
+
+
+</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Bạn có chắc chắn muốn xóa thông tin sách này khỏi danh sách không?</h3>
+            </div>
+
+            <div class="">
+                <button style="margin-left:400px;margin-top: 20px" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+                <form action="" method="POST" role="form" style="margin-left:500px;margin-top: -34px;margin-bottom: 18px">
+                    <input type="hidden" id="" name="idSach" value="{{idSach}}">
+                    <button type="submit" class="btn btn-danger">
+                        Okay
+                    </button>
+                </form>
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Okay</button>-->
+
+            </div>
         </div>
     </div>
-    <button class="btn btn-info" type="button">Thêm </button>
-    <button class="btn btn-info" type="button">Xóa </button>
-    <button class="btn btn-info" type="button">Sửa </button>
 </div>
+<!-- jQuery 3 -->
+
+
+
+{{#section 'js'}}
+<script src="/phantrang/jquery.min.js"></script>
+<script src="/phantrang/bootstrap.min.js"></script>
+<script src="/phantrang/jquery.dataTables.min.js"></script>
+<script src="/phantrang/dataTables.bootstrap.min.js"></script>
+<script src="/dist/js/adminlte.min.js"></script>
+
+<script>
+    $(function () {
+        $('#example1').DataTable({
+            'paging': true,
+            'lengthChange': true,
+            'searching': false,
+            'ordering': true,
+            'info': true,
+            'autoWidth': true,
+            'language': {
+                "lengthMenu": "Hiển thị _MENU_ dòng",
+                "info": "Đang hiển thị _START_ tới _END_ tổng số _TOTAL_ kết quả",
+                "paginate": {
+                    "first": "Trang đầu",
+                    "last": "Trang cuối",
+                    "next": "Tiếp",
+                    "previous": "Trước"
+                }
+            }
+        });
+    });
+    $(function () {
+        //Date picker
+        $('#datepicker').datepicker({
+            autoclose: true
+        });
+    });
+    //Initialize Select2 Elements
+    $('.select2').select2();
+</script> {{/section}}

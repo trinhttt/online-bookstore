@@ -7,57 +7,42 @@ exports.loadAll = () => {
     var sql = 'select * from Book,NhaSX,Loai where Book.idNhaSX=NhaSX.idNhaSX and Book.idLoai=Loai.idLoai';
     return db.load(sql);
 }
-// inner join NhaSX on Book.idNhaSX = NhaSX=idNhaSX
 exports.single = (id) => {
-    return new Promise((resolve, reject) => {
-        var sql = `select * from Book where idSach = ${id}`;
-        db.load(sql).then(rows => {
-            if (rows.length === 0) {
-                resolve(null);
-            } else {
-                resolve(rows[0]);
-            }
-        }).catch(err => {
-            reject(err);
-        });
-    });
-}
-// SELECT DISTINCT StudentID, student_sport.SportID
-// FROM student_sport
-// -- Search all sport played in a match and plays by the student
-// -- (common values sportid btw student_sport & matches)
-// INNER JOIN matches on student_sport.SportID = matches.SportID
-// WHERE
-// -- Select the appropriate player
-// student_sport.StudentID = @StudentID
-// exports.single = (id) => {
-//     return new Promise((resolve, reject) => {
-//         var sql = `select * from NhaSX where idNhaSX = ${id}`;
-//         db.load(sql).then(rows => {
-//             if (rows.length === 0) {
-//                 resolve(null);
-//             } else {
-//                 resolve(rows[0]);
-//             }
-//         }).catch(err => {
-//             reject(err);
-//         });
-//     });
-// }
-//
-// exports.single = (id) => {
-//     return new Promise((resolve, reject) => {
-//         var sql = `select * from Loai where idLoai = ${id}`;
-//         db.load(sql).then(rows => {
-//             if (rows.length === 0) {
-//                 resolve(null);
-//             } else {
-//                 resolve(rows[0]);
-//             }
-//         }).catch(err => {
-//             reject(err);
-//         });
-//     });
-// }
+    var sql = `SELECT* 
+    FROM Book
+    INNER JOIN NhaSX ON Book.idNhaSX=NhaSX.idNhaSX
+    INNER JOIN Loai ON Book.idLoai=Loai.idLoai
+    WHERE Book.idSach='${id}'`
+    return db.load(sql);
+};
+
+
+exports.add = (c) => {
+    var sql = `insert into Book(ten_sach,tac_gia,giaBan,idNhaSX,idLoai,sl) values('${c.ten_sach}','${c.tac_gia}','${c.giaBan}','${c.idNhaSX}','${c.idLoai}','${c.sl}')`;
+    return db.save(sql);
+};
+
+exports.delete = (id) => {
+    var sql = `delete from Book where idSach = ${id}`;
+    return db.save(sql);
+};
+
+exports.update = (c) => {
+    var sql = `update Book set tac_gia = '${c.tacGia}',
+                                    ten_sach = '${c.tenSach}',
+    								giaBan ='${c.giaBan}' ,
+    								idNhaSX = '${c.idNXB}',
+    								idLoai = '${c.idLoai}',
+                                    moTa='${c.moTa}',
+                                    soLuong='${c.soLuong}'
+    								 where idSach = ${c.idSach}`;
+    // console.log(sql);
+    return db.save(sql);
+};
+exports.updateHinhAnh = (id, hinh) => {
+    var sql = `update Book set hinhAnh = 'img/book/${hinh}'
+                                     where idSach = ${id}`;
+    return db.save(sql);
+};
 
 

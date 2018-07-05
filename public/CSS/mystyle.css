@@ -6,7 +6,7 @@ padding: 12px !important;
 }
 .item .item-outer .item-thumb span{
 position: absolute;
- background: #FF0101; 
+ background: yellow;
  width: 41px; 
  height: 22px;
  top: 5px;
@@ -180,7 +180,7 @@ float: left;
 }
 .item-box .item-row1 .item-price .item-brand {
     margin-bottom: 8px;
-    font-size: 12px;
+    font-size: 13px;
 }
 .item-box .item-row1 .item-price .item-brand h6{
     font-size: 12px;
