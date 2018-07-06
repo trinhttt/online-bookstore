@@ -260,6 +260,15 @@ router.post('/sanpham/add', function (req, res, next) {
     var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
         if (err) next(err);
+        var d = new Date();
+        // var date = new Date().getTime();
+
+        var  dd=d.getDate();
+        var  yyyy=d.getFullYear();
+        var  h=d.getHours();
+        var  m=d.getMinutes();
+        var  mm=d.getMonth();
+        var  s=d.getSeconds();
         var Book = {
             tenSach: req.body.ten_sach,
             hinhAnh: files.fileS.name,
@@ -270,7 +279,7 @@ router.post('/sanpham/add', function (req, res, next) {
             idNXB: req.body.idNhaSX,
             idLoai: req.body.idLoai,
             soLuong: req.body.sl,
-            ngayNhap: new Date().toLocaleString().slice(0, 19).replace('T', ' ')
+            ngayNhap: yyyy+ '-' + mm +'-'+dd+' '+h+':'+m+':'+s
         }
         categoryRepo.addNewBook(Book).then(rows => {
             if (rows.length === 0) {
